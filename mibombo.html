@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Illegal</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 600px; margin: 50px auto; }
+    input, button { padding: 10px; margin: 5px 0; width: 100%; }
+    h2 { color: #333; }
+  </style>
+</head>
+<body>
+
+  <h2>Ár</h2>
+  
+  <label for="coke">Kokain levél(db):</label>
+  <input type="number" id="coke" value="0" min="0">
+  
+  <label for="bread">Bibe:</label>
+  <input type="number" id="bread" value="0" min="0">
+  
+  <button onclick="calculateTotal()">Kalkulálás</button>
+  
+  <h2 id="result">Totál:</h2>
+
+  <script>
+    function calculateTotal() {
+      const cokePrice = 5000;
+      const breadPrice = 3000;
+      
+      const cokeQty = parseInt(document.getElementById('coke').value) || 0;
+      const breadQty = parseInt(document.getElementById('bread').value) || 0;
+      
+      const total = (cokeQty * cokePrice) + (breadQty * breadPrice);
+      
+      document.getElementById('result').textContent = `Total: ₩${total}`;
+    }
+  </script>
+
+</body>
+</html>
